@@ -1,0 +1,6 @@
+<%= form_with model: @task_record do |f| %>
+  <%= f.select(:user, @users) %>
+  <%= f.select(:task, @tasks) %>
+
+  <%= f.submit "Confirm" %>
+<% end %>
