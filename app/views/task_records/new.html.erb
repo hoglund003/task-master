@@ -1,4 +1,4 @@
-<%= form_with model: @task_record do |f| %>
+<%= form_with url: "/task_records", method: :post do |f| %>
   <%= f.select(:user, @users) %>
   <%= f.select(:task, @tasks) %>
 
