@@ -5,4 +5,8 @@ class User < ApplicationRecord
   def points
     task_records.sum {|record| record.points}
   end
+
+  def initials
+    name.split.map{|s| s[0]}.join
+  end
 end
