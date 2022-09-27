@@ -3,7 +3,7 @@
   <ul class="task-list">
     <% @tasks.each do |task| %>
       <li>
-        <button class="task-button" type="submit", name="task", value="<%= task[1] %>"><%= task[0] %></button>
+        <button class="task-button <%= task[2] ? "done" : "not-done" %>" type="submit", name="task", value="<%= task[1] %>"><%= task[0] %></button>
       </li>
     <% end %>
   </ul>

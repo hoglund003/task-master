@@ -1,3 +1,8 @@
+:root {
+  --green: rgb(22, 163, 0);
+  --red: rgb(202, 0, 0);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,7 +10,7 @@
 }
 
 .notice {
-  background-color: rgb(22, 163, 0);
+  background-color: var(--green);
   color: rgb(228, 228, 228);
   font-size: 1.4rem;
   padding: 1rem 3rem;
@@ -60,6 +65,14 @@
   border: none;
   padding: 1rem 4rem;
   width: 100%;
+}
+
+.done {
+  border-top: 3px solid var(--green);
+}
+
+.not-done {
+  border-top: 3px solid var(--red);
 }
 
 #new-form .confirm-btn {

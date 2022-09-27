@@ -6,7 +6,7 @@ class TaskRecordsController < ApplicationController
   def new
     @task_record = TaskRecord.new
     @users = User.all.map{|user| [user.name, user.id]}
-    @tasks = Task.all.map{|task| [task.name, task.id]}
+    @tasks = Task.all.map{|task| [task.name, task.id, task.done?]}
   end
 
   def create
