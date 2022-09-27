@@ -3,7 +3,10 @@
   <ul class="task-list">
     <% @tasks.each do |task| %>
       <li>
-        <button class="task-button <%= task[2] ? "done" : "not-done" %>" type="submit", name="task", value="<%= task[1] %>"><%= task[0] %></button>
+        <button class="task-button <%= task.done? ? "done" : "not-done" %>" type="submit" name="task" value="<%= task.id %>">
+          <div class="avatar">OH</div>
+          <%= task.name %>
+        </button>
       </li>
     <% end %>
   </ul>
