@@ -1,11 +1,12 @@
+user_names = ["Ola Halvorsen", "Joe Doe", "Ada Lovelace", "Navn Navnesen"]
 task_names = ["Søppel", "Vanne", "Handling", "Støvsuger", "Oppvask", "Dekke bord"]
 
 User.delete_all
 Task.delete_all
 TaskRecord.delete_all
 
-10.times do
-  User.create(name: "Ola Halvorsen")
+user_names.each do |user_name|
+  User.create(name: user_name)
 end
 
 task_names.each do |task_name|
