@@ -10,7 +10,7 @@ class TaskRecordsController < ApplicationController
   end
 
   def create
-    @task_record = TaskRecord.new(user_id: params[:user], task_id: params[:task])
+    @task_record = TaskRecord.new(user_id: params[:user], task_id: params[:task], done_at: Time.now)
 
     if @task_record.save
       flash[:notice] = "The task was saved!"

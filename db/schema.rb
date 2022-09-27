@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_133643) do
   create_table "task_records", force: :cascade do |t|
     t.integer "user_id"
     t.integer "task_id"
-    t.datetime "done_at", default: "2022-09-27 08:41:11"
+    t.datetime "done_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
