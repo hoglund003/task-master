@@ -1,0 +1,25 @@
+
+<table>
+  <thead>
+    <tr>
+      <td>Task Name</td>
+      <td>User</td>
+      <td>Done At</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @task_records.each do |task_record| %>
+      <tr>
+        <td>
+          <%= task_record.task.name %>
+        </td>
+        <td>
+          <%= task_record.user.name %>
+        </td>
+        <td>
+          <%= task_record.done_at.to_datetime.ctime %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

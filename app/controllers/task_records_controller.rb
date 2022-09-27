@@ -1,4 +1,8 @@
 class TaskRecordsController < ApplicationController
+  def index
+    @task_records = TaskRecord.all
+  end
+
   def new
     @task_record = TaskRecord.new
     @users = User.all.map{|user| [user.name, user.id]}
