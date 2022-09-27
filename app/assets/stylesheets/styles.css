@@ -13,7 +13,7 @@ nav.navbar {
   background-color: var(--red);
   color: white;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,6 +56,7 @@ nav.navbar a {
 .container {
   max-width: 50rem;
   margin: auto;
+  margin-top: 2rem;
 }
 
 #new-form {
