@@ -1,9 +1,5 @@
 <button class="task-button <%= task.done? ? "done" : "not-done" %>" type="submit" name="task" value="<%= task.id %>">
   <%# Hide avatar if task not done %>
-  <div class="avatar <%= task.done? ? "" : "hidden" %>"> 
-    <% if task.done? %>
-      <%= task.user.initials %>
-    <% end %>
-  </div>
+  <%= render "users/avatar", task: task %>
   <%= task.name %>
 </button>

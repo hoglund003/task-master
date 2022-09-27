@@ -1,0 +1,5 @@
+<div class="avatar <%= task.done? ? "" : "hidden" %>"> 
+  <% if task.done? %>
+    <%= task.user.initials %>
+  <% end %>
+</div>
