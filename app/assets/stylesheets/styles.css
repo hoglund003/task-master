@@ -46,10 +46,20 @@
   width: fit-content;
 }
 
-#new-form #task {
+.task-list {
   grid-column: -1;
-  grid-row: 1;
+  grid-row: 1 / -1;
+}
+
+.task-list li {
+  list-style: none;
+}
+
+.task-button {
   width: fit-content;
+  border: none;
+  padding: 1rem 4rem;
+  width: 100%;
 }
 
 #new-form .confirm-btn {
@@ -57,7 +67,7 @@
   grid-row: -1;
 }
 
-select, .confirm-btn {
+select, .confirm-btn, .task-button {
   font-size: 2rem;
 }
 

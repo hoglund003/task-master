@@ -1,6 +1,10 @@
 <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
   <%= f.select(:user, @users) %>
-  <%= f.select(:task, @tasks) %>
-
-  <%= f.submit "Confirm", class: "confirm-btn" %>
+  <ul class="task-list">
+    <% @tasks.each do |task| %>
+      <li>
+        <button class="task-button" type="submit", name="task", value="<%= task[1] %>"><%= task[0] %></button>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
