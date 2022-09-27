@@ -4,7 +4,12 @@
     <% @tasks.each do |task| %>
       <li>
         <button class="task-button <%= task.done? ? "done" : "not-done" %>" type="submit" name="task" value="<%= task.id %>">
-          <div class="avatar">OH</div>
+          <%# Hide avatar if task not done %>
+          <div class="avatar <%= task.done? ? "" : "hidden" %>"> 
+            <% if task.done? %>
+              <%= task.user.initials %>
+            <% end %>
+          </div>
           <%= task.name %>
         </button>
       </li>
