@@ -1,6 +1,6 @@
-<%= form_with url: "/task_records", method: :post do |f| %>
+<%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
   <%= f.select(:user, @users) %>
   <%= f.select(:task, @tasks) %>
 
-  <%= f.submit "Confirm" %>
+  <%= f.submit "Confirm", class: "confirm-btn" %>
 <% end %>

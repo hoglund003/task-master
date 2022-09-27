@@ -8,3 +8,30 @@
   max-width: 50rem;
   margin: auto;
 }
+
+#new-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: repeat(7, 1fr);
+}
+
+#new-form #user {
+  grid-column: 1;
+  grid-row: 1;
+  width: fit-content;
+}
+
+#new-form #task {
+  grid-column: -1;
+  grid-row: 1;
+  width: fit-content;
+}
+
+#new-form .confirm-btn {
+  grid-column: -1;
+  grid-row: -1;
+}
+
+select {
+  font-size: 2rem;
+}
