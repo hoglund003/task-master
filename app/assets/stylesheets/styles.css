@@ -57,6 +57,8 @@ nav.navbar a {
   max-width: 50rem;
   margin: auto;
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 #new-form {
