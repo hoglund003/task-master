@@ -145,3 +145,53 @@ td {
 thead tr td {
   border-bottom: 1px solid black;
 }
+
+.record-card {
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+}
+
+.record-card a {
+  color: var(--red);
+}
+
+.record-card #done-at {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.record-card #task-name {
+  grid-column: 1;
+  grid-row: 2;
+
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.record-card #points {
+  grid-column: -1;
+  grid-row: 2;
+
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+
+.record-card #username {
+  grid-column: 1;
+  grid-row: 3;
+
+  font-weight: 700;
+  font-size: 1.2rem;
+
+  margin-top: 1rem;
+}
+
+.record-card #actions {
+  grid-column: 1;
+  grid-row: 4;
+
+  margin-top: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+}

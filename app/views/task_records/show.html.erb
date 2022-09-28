@@ -1,0 +1,17 @@
+<div class="record-card">
+  <span id="done-at">
+    At: <%= @task_record.done_at.to_s(:short) %>
+  </span>
+  <span id="task-name">
+    <%= @task_record.name %>
+  </span>
+  <span id="points">
+    Points: <%= @task_record.points %>
+  </span>
+  <span id="username">
+    User: <%= link_to @task_record.user.name %>
+  </span>
+  <span id="actions">
+    Actions: <%= button_to "Delete" %> <%= button_to "Edit" %>
+  </span>
+</div>

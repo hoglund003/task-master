@@ -22,4 +22,8 @@ class TaskRecordsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def show
+    @task_record = TaskRecord.find(params[:id])
+  end
 end

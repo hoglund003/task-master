@@ -19,6 +19,9 @@
         <td>
           <%= task_record.done_at.ctime %>
         </td>
+        <td>
+          <%= button_to "…", task_record, method: :get %>
+        </td>
       </tr>
     <% end %>
   </tbody>
