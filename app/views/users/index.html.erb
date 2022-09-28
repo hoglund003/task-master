@@ -10,6 +10,7 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.points %></td>
+        <td><%= button_to "…", user, method: :get %></td>
       </tr>
     <% end %>
   </tbody>

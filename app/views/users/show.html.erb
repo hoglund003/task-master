@@ -1,0 +1,15 @@
+<div class="user-card">
+  <h1 class="username"><%= @user.name %></h1>
+  <span class="total-points">Total points: <%= @user.points %></span>
+  <span class="total-tasks">Total tasks done: <%= @user.task_records.count %></span>
+  <span class="score-place">Place: <%= link_to @user.place.ordinalize, users_path %></span>
+  <table class="tasks-table">
+    <% Task.all.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= @user.task_records.where(task_id: task.id).count %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+

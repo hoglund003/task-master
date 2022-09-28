@@ -195,3 +195,46 @@ thead tr td {
   display: flex;
   justify-content: space-between;
 }
+
+.user-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr) auto repeat(1, 1fr);
+}
+
+.user-card a {
+  color: var(--red);
+}
+
+.user-card .username {
+  grid-column: 1;
+  grid-row: 1;
+
+  margin-bottom: 1rem;
+}
+
+.user-card .total-points {
+  grid-column: 1;
+  grid-row: 2;
+
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+.user-card .score-place {
+  grid-column: -1;
+  grid-row: 2;
+
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+.user-card .total-tasks {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.user-card .tasks-table {
+  grid-column: 1;
+  grid-row: 4;
+}
