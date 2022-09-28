@@ -5,4 +5,8 @@ class TaskRecord < ApplicationRecord
   def points
     Task.find(task_id).points.to_i
   end
+
+  def name
+    Task.find(task_id).name
+  end
 end
