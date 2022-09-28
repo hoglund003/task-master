@@ -12,6 +12,6 @@
     User: <%= link_to @task_record.user.name, @task_record.user %>
   </span>
   <span class="actions">
-    Actions: <%= button_to "Delete" %> <%= button_to "Edit" %>
+    Actions: <%= button_to "Delete", @task_record, method: :delete %> <%= button_to "Edit" %>
   </span>
 </div>

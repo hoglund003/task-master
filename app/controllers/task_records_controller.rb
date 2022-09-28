@@ -26,4 +26,10 @@ class TaskRecordsController < ApplicationController
   def show
     @task_record = TaskRecord.find(params[:id])
   end
+
+  def destroy
+    @task_record = TaskRecord.find(params[:id])
+    @task_record.destroy
+    redirect_to task_records_path
+  end
 end
