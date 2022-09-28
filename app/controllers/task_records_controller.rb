@@ -1,6 +1,6 @@
 class TaskRecordsController < ApplicationController
   def index
-    @task_records = TaskRecord.all
+    @task_records = TaskRecord.all.order(done_at: :desc)
   end
 
   def new
