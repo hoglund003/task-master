@@ -16,10 +16,8 @@ class TaskRecordsController < ApplicationController
       flash[:notice] = "The task was saved!"
       redirect_to root_path
     else
-      flash.now[:alert] = "The task was not saved!"
-      @users = User.all.map{|user| [user.name, user.id]}
-      @tasks = Task.all
-      render :new, status: :unprocessable_entity
+      flash[:alert] = "The task was not saved!"
+      redirect_to root_path
     end
   end
 
