@@ -155,12 +155,12 @@ thead tr td {
   color: var(--red);
 }
 
-.record-card #done-at {
+.record-card .done-at {
   grid-column: 1;
   grid-row: 1;
 }
 
-.record-card #task-name {
+.record-card .task-name {
   grid-column: 1;
   grid-row: 2;
 
@@ -168,7 +168,7 @@ thead tr td {
   font-size: 2rem;
 }
 
-.record-card #points {
+.record-card .points {
   grid-column: -1;
   grid-row: 2;
 
@@ -176,7 +176,7 @@ thead tr td {
   font-size: 1.8rem;
 }
 
-.record-card #username {
+.record-card .username {
   grid-column: 1;
   grid-row: 3;
 
@@ -186,7 +186,7 @@ thead tr td {
   margin-top: 1rem;
 }
 
-.record-card #actions {
+.record-card .actions {
   grid-column: 1;
   grid-row: 4;
 
