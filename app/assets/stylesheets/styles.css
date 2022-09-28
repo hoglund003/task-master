@@ -234,7 +234,7 @@ thead tr td {
   grid-row: 3;
 }
 
-.user-card .tasks-table {
-  grid-column: 1;
+.user-card #chart-1 {
+  grid-column: 1 / -1;
   grid-row: 4;
 }
