@@ -14,5 +14,7 @@ task_names.each do |task_name|
 end
 
 User.all.each do |user|
-  TaskRecord.create(user_id: user.id, task_id: Task.pluck(:id).sample, done_at: Time.now)
+  5.times do 
+    TaskRecord.create(user_id: user.id, task_id: Task.pluck(:id).sample, done_at: rand((Time.now)..(Time.now + 1.day)))
+  end
 end
