@@ -207,6 +207,11 @@ thead tr td {
   margin-bottom: 1rem;
 }
 
+.user-card .avatar {
+  grid-column: -1;
+  grid-row: 1;
+}
+
 .user-card .total-points {
   grid-column: 1;
   grid-row: 2;

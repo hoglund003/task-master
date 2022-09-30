@@ -1,5 +1,6 @@
 <div class="user-card">
   <h1 class="username"><%= @user.name %></h1>
+  <div class="avatar"><%= image_tag @user.avatar_url %></div>
   <span class="total-points">Total points: <%= @user.points %></span>
   <span class="total-tasks">Total tasks done: <%= @user.task_records.count %></span>
   <span class="score-place">Place: <%= link_to @user.place.ordinalize, users_path %></span>
