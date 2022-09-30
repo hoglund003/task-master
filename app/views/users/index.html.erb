@@ -1,6 +1,7 @@
 <table>
   <thead>
     <tr>
+      <td>#</td>
       <td>Name</td>
       <td>Points</td>
     </tr>
@@ -8,6 +9,11 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td>
+          <div class="small-avatar">
+            <%= image_tag user.avatar_url %>
+          </div>
+        </td>
         <td><%= user.name %></td>
         <td><%= user.points %></td>
         <td><%= button_to "…", user, method: :get %></td>
