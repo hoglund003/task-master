@@ -14,4 +14,8 @@ class User < ApplicationRecord
     # Returns User's place on scoreboard
     User.all.sort_by{|user| -user.points}.index(self) + 1
   end
+
+  def avatar_url
+    "https://avatars.dicebear.com/api/initials/#{initials}.svg?radius=50"
+  end
 end

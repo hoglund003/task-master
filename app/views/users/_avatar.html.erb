@@ -1,5 +1,1 @@
-<div class="avatar <%= task.done? ? "" : "hidden" %>"> 
-  <% if task.done? %>
-    <%= task.user.initials %>
-  <% end %>
-</div>
+<%= image_tag task.user.avatar_url %>
