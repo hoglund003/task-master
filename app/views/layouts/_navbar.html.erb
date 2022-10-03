@@ -1,7 +1,20 @@
 <nav class="navbar">
-  <%= link_to "Home", new_task_record_path %>
-  <%= link_to "Score Board", users_path %>
-  <h1><%= link_to "Task Master", new_task_record_path %></h1>
-  <%= link_to "Stats" %>
-  <%= link_to "History", task_records_path %>
+  <div class="top">
+    <%= link_to "Home", new_task_record_path %>
+    <%= link_to "Score Board", users_path %>
+    <h1><%= link_to "Task Master", new_task_record_path %></h1>
+    <%= link_to "Stats" %>
+    <%= link_to "History", task_records_path %>
+    <button class="menu-button">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+  </div>
+  <div class="bottom">
+    <%= link_to "Home", new_task_record_path %>
+    <%= link_to "Score Board", users_path %>
+    <%= link_to "Stats" %>
+    <%= link_to "History", task_records_path %>
+  </div>
 </nav>
