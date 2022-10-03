@@ -14,13 +14,27 @@ body {
 }
 
 nav.navbar {
+  display: flex;
+  align-items: center;
   background-color: var(--red);
   color: white;
   padding: 1rem;
   margin-bottom: 0.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+@media (min-width : 656px) {
+  nav.navbar {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width : 656px) {
+  nav.navbar a {
+    display: none;
+  }
+  nav.navbar h1 a {
+    display: block;
+  }
 }
 
 nav.navbar > * {
@@ -66,15 +80,31 @@ nav.navbar a {
 }
 
 #new-form {
-  display: grid;
   grid-template-columns: 2fr 1fr 2fr;
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: 1fr 6fr;
 }
 
 #new-form #user {
   grid-column: 1;
   grid-row: 1;
-  width: fit-content;
+}
+
+@media (min-width : 656px) {
+  #new-form {
+    display: grid;
+  }
+
+  #new-form #user {
+    width: fit-content;
+  }
+}
+
+@media (max-width : 656px) {
+  #new-form #user {
+    width: 100%;
+    margin-bottom: 1rem;
+    height: 6rem;
+  }
 }
 
 .task-list {
