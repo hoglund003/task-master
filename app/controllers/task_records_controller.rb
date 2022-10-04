@@ -7,6 +7,7 @@ class TaskRecordsController < ApplicationController
     @task_record = TaskRecord.new
     @users = User.all.map{|user| [user.name, user.id]}
     @tasks = Task.all
+    @selected_date = params[:date]
   end
 
   def create

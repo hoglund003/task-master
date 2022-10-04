@@ -1,9 +1,9 @@
 <%# Style button based on status %>
-<button class="task-button <%= task.done? ? "done" : "not-done" %>" type="submit" name="task" value="<%= task.id %>">
+<button class="task-button <%= task.done?(selected_date) ? "done" : "not-done" %>" type="submit" name="task" value="<%= task.id %>">
   <%# Hide avatar if task not done %>
   <div class="avatar"> 
-    <% if task.done? %>
-      <%= render "users/avatar", task: task %>
+    <% if task.done?(selected_date) %>
+      <%= render "users/avatar", task: task, selected_date: selected_date %>
     <% end %>
   </div>
   <%= task.name %>
