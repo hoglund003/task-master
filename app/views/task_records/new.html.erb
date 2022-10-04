@@ -1,4 +1,5 @@
 <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
+  <%= render "week" %>
   <%= f.select(:user, @users) %>
   <ul class="task-list">
     <% @tasks.each do |task| %>
