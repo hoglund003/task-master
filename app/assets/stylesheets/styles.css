@@ -143,13 +143,11 @@ nav.navbar a {
   background-color: transparent;
   text-align: start;
   margin-right: 5px;
+
+  outline: none;
 }
 
-#week .wday:hover {
-  border-bottom: 2px solid var(--red);
-}
-
-#week .wday:focus {
+#week .wday:hover, #week .wday:focus, #week .wday.active {
   border-bottom: 2px solid var(--red);
 }
 

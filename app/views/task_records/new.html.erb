@@ -1,4 +1,5 @@
 <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
+  <%= f.hidden_field :selected_date, value: params[:date] %>
   <%= render "week" %>
   <%= f.select(:user, @users) %>
   <ul class="task-list">
