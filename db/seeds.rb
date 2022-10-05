@@ -1,4 +1,4 @@
-user_names = ["Ola Halvorsen", "Joe Doe", "Ada Lovelace", "Navn Navnesen"]
+user_names = ["Ola Halvorsen", "Joe Doe", "Ada Lovelace", "Navn Navnesen", "Joe Noe", "Nick Halden"]
 task_names = ["Søppel", "Vanne", "Handling", "Støvsuger", "Oppvask", "Dekke bord", "Vaske bord"]
 
 User.delete_all
