@@ -1,12 +1,1 @@
-<%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
-  <%= f.hidden_field :selected_date, value: @selected_date %>
-  <%= render "week" %>
-  <%= f.select(:user, @users) %>
-  <ul class="task-list">
-    <% @tasks.each do |task| %>
-      <li>
-        <%= render "task_button", task: task, selected_date: @selected_date %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: @selected_date } %>

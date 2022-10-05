@@ -3,7 +3,7 @@
   <%# Hide avatar if task not done %>
   <div class="avatar"> 
     <% if task.done?(selected_date) %>
-      <%= render "users/avatar", task: task, selected_date: selected_date %>
+      <%= render partial: "users/avatar", locals: {task: task, selected_date: selected_date} %>
     <% end %>
   </div>
   <%= task.name %>

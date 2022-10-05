@@ -15,12 +15,6 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <% flash.each do |type, msg| %>
-      <div id="msg" class="<%= type %>">
-        <%= msg %>
-        <span onclick="document.getElementById('msg').remove()">x</span>
-      </div>
-    <% end %>
     <div class="container">
       <%= yield %>
     </div>

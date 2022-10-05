@@ -118,6 +118,7 @@ nav.navbar a {
   margin-top: 2rem;
   padding: 0 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -135,7 +136,7 @@ nav.navbar a {
   margin-bottom: 1rem;
 }
 
-#week .wday {
+#week .wday, #week a {
   width: 100%;
   font-size: 1.5rem;
   border: none;
