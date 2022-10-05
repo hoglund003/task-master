@@ -1,6 +1,7 @@
 :root {
   --green: rgb(22, 163, 0);
   --red: rgb(202, 0, 0);
+  --red-transparent: rgb(255, 107, 107);
 }
 
 * {
@@ -148,9 +149,14 @@ nav.navbar a {
   outline: none;
 }
 
-#week .wday:hover, #week .wday:focus, #week .wday.active {
+#week .wday:focus, #week .wday.active, #week .wday:hover.active {
   border-bottom: 2px solid var(--red);
 }
+
+#week .wday:hover {
+  border-bottom: 2px solid var(--red-transparent);
+}
+
 
 #new-form #user {
   grid-column: 1;

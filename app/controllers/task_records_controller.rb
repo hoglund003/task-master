@@ -7,7 +7,7 @@ class TaskRecordsController < ApplicationController
     @task_record = TaskRecord.new
     @users = User.all.map{|user| [user.name, user.id]}
     @tasks = Task.all
-    @selected_date = params[:date] || Date.today
+    @selected_date = params[:date] || Date.today.to_s
 
     if turbo_frame_request?
       render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: @selected_date }

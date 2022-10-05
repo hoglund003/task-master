@@ -1,8 +1,8 @@
 <div class="week" id="week">
   <% 5.times do |n|%>
     <% date = Date.today.beginning_of_week + n.days %>
-    <a href="<%= new_task_record_url %>?date=<%= date %>">
-      <button class="wday" type="button"><%= date.strftime("%a") %></button>
+    <a href="<%= new_task_record_url %>?date=<%= date %>" data-action="click->hello#setActive">
+      <button class="wday <%= selected_date == date.to_s ? "active" : "" %>" type="button"><%= date.strftime("%a") %></button>
     </a>
   <% end %>
 </div>

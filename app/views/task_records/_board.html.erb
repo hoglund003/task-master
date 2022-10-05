@@ -1,11 +1,11 @@
-<turbo-frame id="turbo-week" data-turbo-permanent>
+<turbo-frame id="turbo-week">
   <% flash.each do |type, msg| %>
       <div id="msg" class="<%= type %>">
         <%= msg %>
         <span onclick="document.getElementById('msg').remove()">x</span>
       </div>
     <% end %>
-  <%= render "week" %>
+  <%= render "week", selected_date: selected_date %>
   <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
     <%= f.hidden_field :selected_date, value: selected_date %>
     <%= f.select(:user, users) %>
