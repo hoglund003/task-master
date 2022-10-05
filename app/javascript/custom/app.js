@@ -2,6 +2,8 @@ const navbar = document.querySelector("nav.navbar");
 const menuButton = document.querySelector(".menu-button");
 const navBottomATags = document.querySelectorAll("nav.navbar .bottom a");
 const weekButtons = document.querySelectorAll(".wday");
+const hiddemDateInput = document.querySelector("#selected_date");
+const newForm = document.querySelector("#new-form");
 
 var navbarExpanded = false;
 
@@ -30,14 +32,18 @@ document.addEventListener('click', (e) => {
   }
 });
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const parameter_date = urlParams.get('date');
+let currentDate = new Date().toJSON().slice(0,10); 
 
 weekButtons.forEach(btn=>{
-  if (btn.value == parameter_date) {
+  if (btn.value == currentDate){
     btn.classList.add("active");
-  } else {
-    btn.classList.remove("active");
   }
+
+  btn.addEventListener('click', () => {
+    weekButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    btn.classList.add("active");
+    hiddemDateInput.value = btn.value;
+  });
 });
