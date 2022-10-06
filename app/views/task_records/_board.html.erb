@@ -1,20 +1,22 @@
 <turbo-frame id="turbo-week">
-  <% flash.each do |type, msg| %>
-      <div id="msg" class="<%= type %>">
-        <%= msg %>
-        <span onclick="document.getElementById('msg').remove()">x</span>
-      </div>
-    <% end %>
-  <%= render "week", selected_date: selected_date %>
-  <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
-    <%= f.hidden_field :selected_date, value: selected_date %>
-    <%= f.select(:user, users) %>
-    <ul class="task-list">
-      <% tasks.each do |task| %>
-        <li>
-          <%= render partial: "task_button", :locals => { :task => task, :selected_date => selected_date } %>
-        </li>
+  <div class="container">
+    <% flash.each do |type, msg| %>
+        <div id="msg" class="<%= type %>">
+          <%= msg %>
+          <span onclick="document.getElementById('msg').remove()">x</span>
+        </div>
       <% end %>
-    </ul>
-  <% end %>
+    <%= render "week", selected_date: selected_date %>
+    <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
+      <%= f.hidden_field :selected_date, value: selected_date %>
+      <%= f.select(:user, users) %>
+      <ul class="task-list">
+        <% tasks.each do |task| %>
+          <li>
+            <%= render partial: "task_button", :locals => { :task => task, :selected_date => selected_date } %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 </turbo-frame>

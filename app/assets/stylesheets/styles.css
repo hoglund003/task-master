@@ -125,6 +125,7 @@ nav.navbar a {
 
 .button-container { 
   display: flex;
+  justify-content: space-evenly;
 }
 
 .sort-button {
@@ -132,7 +133,7 @@ nav.navbar a {
   padding: 0.6rem 2rem;
   border: none;
   border-bottom: 2px solid transparent;
-  margin-right: 1rem;
+  height: 100%;
 }
 
 #new-form {

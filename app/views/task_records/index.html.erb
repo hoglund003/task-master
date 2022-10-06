@@ -1,29 +1,30 @@
-
-<table>
-  <thead>
-    <tr>
-      <td>Task Name</td>
-      <td>User</td>
-      <td>Done At</td>
-      <td></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @task_records.each do |task_record| %>
+<div class="container">
+  <table>
+    <thead>
       <tr>
-        <td>
-          <%= task_record.task.name %>
-        </td>
-        <td>
-          <%= task_record.user.name %>
-        </td>
-        <td>
-          <%= task_record.done_at %>
-        </td>
-        <td>
-          <%= button_to "…", task_record, method: :get %>
-        </td>
+        <td>Task Name</td>
+        <td>User</td>
+        <td>Done At</td>
+        <td></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @task_records.each do |task_record| %>
+        <tr>
+          <td>
+            <%= task_record.task.name %>
+          </td>
+          <td>
+            <%= task_record.user.name %>
+          </td>
+          <td>
+            <%= task_record.done_at %>
+          </td>
+          <td>
+            <%= button_to "…", task_record, method: :get %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

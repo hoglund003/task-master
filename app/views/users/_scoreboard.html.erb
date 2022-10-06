@@ -1,40 +1,42 @@
 <turbo-frame id="turbo-scoreboard">
-  <% today = Date.today %>
-  <% this_month = Date.new(today.year, today.month) %>
-  <div class="button-container">
-    <a href="/users">
-      <button class="sort-button <%= params[:start_date] == nil ? "active" : "" %>">Ever</button>
-    </a>
-    <a href="/users?start_date=<%= Date.new(today.year, today.prev_month.month) %>&end_date=<%= this_month %>">
-      <button class="sort-button <%= params[:end_date] == this_month.to_s ? "active" : "" %>">Last month</button>
-    </a>
-    <a href="/users?start_date=<%= this_month %>&end_date=<%= Date.new(today.year, today.next_month.month) %>">
-      <button class="sort-button <%= params[:start_date] == this_month.to_s ? "active" : "" %>">This month</button>
-    </a>
-  </div>
+  <div class="container">
+    <% today = Date.today %>
+    <% this_month = Date.new(today.year, today.month) %>
+    <div class="button-container">
+      <a href="/users">
+        <button class="sort-button <%= params[:start_date] == nil ? "active" : "" %>">Ever</button>
+      </a>
+      <a href="/users?start_date=<%= Date.new(today.year, today.prev_month.month) %>&end_date=<%= this_month %>">
+        <button class="sort-button <%= params[:end_date] == this_month.to_s ? "active" : "" %>">Last month</button>
+      </a>
+      <a href="/users?start_date=<%= this_month %>&end_date=<%= Date.new(today.year, today.next_month.month) %>">
+        <button class="sort-button <%= params[:start_date] == this_month.to_s ? "active" : "" %>">This month</button>
+      </a>
+    </div>
 
-  <table>
-    <thead>
-      <tr>
-        <td></td>
-        <td>Name</td>
-        <td>Points</td>
-        <td></td>
-      </tr>
-    </thead>
-    <tbody>
-      <% users.each do |user| %>
+    <table>
+      <thead>
         <tr>
-          <td>
-            <div class="small-avatar">
-              <%= image_tag user.avatar_url %>
-            </div>
-          </td>
-          <td><%= user.name %></td>
-          <td><%= user.points_at(params[:start_date], params[:end_date]) %></td>
-          <td><%= button_to "…", user, method: :get %></td>
+          <td></td>
+          <td>Name</td>
+          <td>Points</td>
+          <td></td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  </turbo-frame>
+      </thead>
+      <tbody>
+        <% users.each do |user| %>
+          <tr>
+            <td>
+              <div class="small-avatar">
+                <%= image_tag user.avatar_url %>
+              </div>
+            </td>
+            <td><%= user.name %></td>
+            <td><%= user.points_at(params[:start_date], params[:end_date]) %></td>
+            <td><%= button_to "…", user, method: :get %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</turbo-frame>
