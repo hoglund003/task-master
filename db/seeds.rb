@@ -1,4 +1,4 @@
-user_names = Array((1..20).map{|n| Faker::Name.name})
+user_names = Array((1..5).map{|n| Faker::Name.name})
 task_names = ["Søppel", "Vanne", "Handling", "Støvsuger", "Oppvask", "Dekke bord", "Vaske bord"]
 
 User.delete_all
@@ -14,7 +14,7 @@ task_names.each do |task_name|
 end
 
 User.all.each do |user|
-  rand(5..50).times do 
-    TaskRecord.create(user_id: user.id, task_id: Task.pluck(:id).sample, done_at: rand((Time.now - 50.days)..(Time.now - 1.day)))
+  rand(15..60).times do 
+    TaskRecord.create(user_id: user.id, task_id: Task.pluck(:id).sample, done_at: rand((Date.today - 200.days)..(Date.today - 1.day)))
   end
 end

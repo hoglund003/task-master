@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Tasks done each day:</h1>
+  <%= line_chart(@tasks_per_day, xtitle: "Date (last #{@tasks_per_day.count} days)", ytitle: "Task Count") %>
+  
+  <h1>Avarage type of tasks done each week:</h1>
+  <%= bar_chart(@types_of_tasks_done, xtitle: "Tasks Average", ytitle: "Task") %>
+
+  <h1>Average number of tasks done each day:</h1>
+  <%= column_chart(@busiest_days, xtitle: "Week", ytitle: "Daily Tasks Average") %>
+</div>
