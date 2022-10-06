@@ -6,6 +6,11 @@ class User < ApplicationRecord
     task_records.sum {|record| record.points}
   end
 
+  def points_at(start_date, end_date)
+    # Returns the users points from a spesific date.
+    task_records.where(done_at: (start_date)..(end_date)).sum {|record| record.points}
+  end
+
   def initials
     name.split.map{|s| s[0]}.join
   end

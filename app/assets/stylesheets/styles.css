@@ -123,6 +123,18 @@ nav.navbar a {
   justify-content: center;
 }
 
+.button-container { 
+  display: flex;
+}
+
+.sort-button {
+  background-color: white;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-right: 1rem;
+}
+
 #new-form {
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 0.4fr 1fr 6fr;
@@ -149,11 +161,11 @@ nav.navbar a {
   outline: none;
 }
 
-#week .wday:focus, #week .wday.active, #week .wday:hover.active {
+#week .wday:focus, #week .wday.active, #week .wday:hover.active, .sort-button.active, .sort-button:hover.active {
   border-bottom: 2px solid var(--red);
 }
 
-#week .wday:hover {
+#week .wday:hover, .sort-button:hover {
   border-bottom: 2px solid var(--red-transparent);
 }
 
