@@ -64,6 +64,8 @@ group :development do
 
   gem "hotwire-livereload"
 
+  gem "faker"
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
