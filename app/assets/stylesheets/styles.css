@@ -152,6 +152,20 @@ nav.navbar a {
   grid-template-rows: 0.4fr 1fr 6fr;
 }
 
+#new-form select, #new-form button {
+  background-color: rgb(255, 255, 255);
+
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+
+  transition: 0.2s;
+}
+
+#new-form select:hover, #new-form button:hover {
+
+  box-shadow: 4px 4px 5px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
 #week {
   grid-column: 1 / 5;
   grid-row: 1;
