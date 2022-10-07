@@ -21,7 +21,7 @@ class TaskRecordsController < ApplicationController
     if @task_record.save
       @users = User.all.map{|user| [user.name, user.id]}
       @tasks = Task.all
-      flash[:notice] = "The task was saved!"
+      flash.now[:notice] = "The task was saved!"
       render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:selected_date], }
     else
       flash[:alert] = "The task was not saved!"
