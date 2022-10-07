@@ -18,7 +18,7 @@
       <thead>
         <tr>
           <td></td>
-          <td>Name</td>
+          <td class="username-td">Name</td>
           <td>Points</td>
           <td></td>
         </tr>
@@ -31,7 +31,7 @@
                 <%= image_tag user.avatar_url %>
               </div>
             </td>
-            <td><%= user.name %></td>
+            <td class="username-coll"><%= user.name %></td>
             <td><%= user.points_at(params[:start_date], params[:end_date]) %></td>
             <td><%= button_to "…", user, method: :get %></td>
           </tr>
