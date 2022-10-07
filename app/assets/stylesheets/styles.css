@@ -220,6 +220,10 @@ nav.navbar a {
   border-bottom: 2px solid var(--red-transparent);
 }
 
+#week .wday .date {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.552);
+}
 
 #new-form #user {
   grid-column: 1;
@@ -227,9 +231,6 @@ nav.navbar a {
 }
 
 @media (min-width : 656px) {
-  #new-form {
-  }
-
   #new-form #user {
     width: 100%;
     grid-column: 1 / -1;
@@ -245,6 +246,33 @@ nav.navbar a {
     grid-template-rows: 1fr 1fr;
     gap: 1rem;
   }
+
+  #week a {
+    text-decoration: none;
+  }
+
+  #week a .wday {
+    display: flex;
+    align-items: baseline;
+  }
+
+  #week a .wday .wday-name {
+    margin-right: 10%;
+  }
+}
+
+.full-date {
+  width: fit-content;
+  font-size: 1.5rem;
+  background-color: var(--red);
+  color: white;
+  border-radius: 2rem;
+  padding: .5rem 2rem;
+}
+
+#turbo-week .full-date {
+  margin-left: auto;
+  margin-bottom: 1rem;
 }
 
 @media (max-width : 656px) {
@@ -261,6 +289,15 @@ nav.navbar a {
 
   .sort-button {
     padding: 0.6rem 1rem;
+  }
+
+  #week a {
+    text-decoration: none;
+  }
+
+  #week a .wday {
+    display: flex;
+    flex-direction: column;
   }
 }
 

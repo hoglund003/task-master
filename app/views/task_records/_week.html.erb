@@ -1,8 +1,12 @@
+<% date_today = Date.today%>
+<span class="full-date">
+  <%= date_today.strftime('%e. of %b %Y') %>
+</span>
 <div class="week" id="week">
   <% 5.times do |n|%>
-    <% date = Date.today.beginning_of_week + n.days %>
+    <% date = date_today.beginning_of_week + n.days %>
     <a href="<%= new_task_record_url %>?date=<%= date %>" data-action="click->hello#setActive">
-      <button class="wday <%= selected_date == date.to_s ? "active" : "" %>" type="button"><%= date.strftime("%a") %></button>
+      <button class="wday <%= selected_date == date.to_s ? "active" : "" %>" type="button"><span class="wday-name"><%= date.strftime("%a") %></span> <span class="date"><%= date.strftime('%d/%m') %></span></button>
     </a>
   <% end %>
 </div>

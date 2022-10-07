@@ -1,7 +1,7 @@
 <div class="container">
   <div class="record-card">
     <span class="done-at">
-      At: <%= @task_record.done_at.to_s(:short) %>
+      At: <%= @task_record.done_at.strftime("%d.%m.%Y") %>
     </span>
     <span class="task-name">
       <%= @task_record.name %>

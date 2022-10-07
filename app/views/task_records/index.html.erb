@@ -18,7 +18,7 @@
             <%= task_record.user.name %>
           </td>
           <td>
-            <%= task_record.done_at %>
+            <%= task_record.done_at.strftime("%d.%m.%Y") %>
           </td>
           <td>
             <%= button_to "…", task_record, method: :get %>
