@@ -11,11 +11,13 @@ menuButton.addEventListener('click', () => {
   // Toggle menu apperance
   if (!navbarExpanded) {
     navbarExpanded = true;
+    menuButton.focus();
     navBottomATags.forEach(child=>{
       child.style.display = "block";
     });
   } else {
     navbarExpanded = false;
+    menuButton.blur();
     navBottomATags.forEach(child=>{
       child.style.display = "none";
     });

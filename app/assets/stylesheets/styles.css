@@ -26,16 +26,41 @@ nav.navbar .top {
   align-items: center;
 }
 
+nav.navbar .top a:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+nav.navbar .top a:hover:after {
+  width: 100%;
+  background-color: white;
+}
+
+nav.navbar .top h1 a {
+  border: none;
+}
+
 nav.navbar .menu-button {
   padding: 5px 10px;
   margin-left: auto;
   background-color: var(--red);
   border: 2px solid white;
   border-radius: 10px;
+
+  transition: 0.5s;
 }
 
 nav.navbar .menu-button:hover {
   cursor: pointer;
+}
+
+nav.navbar .menu-button:focus {
+  transform: scale(1.1);
 }
 
 nav.navbar .menu-button div{
@@ -160,7 +185,7 @@ nav.navbar a {
   transition: 0.2s;
 }
 
-#new-form select:hover, #new-form button:hover {
+#new-form button:hover {
 
   box-shadow: 4px 4px 5px 10px rgba(0, 0, 0, 0.1);
   transform: scale(1.1);
@@ -216,7 +241,7 @@ nav.navbar a {
   
     display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     grid-template-rows: 1fr 1fr;
     gap: 1rem;
   }
