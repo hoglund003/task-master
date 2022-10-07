@@ -178,11 +178,22 @@ nav.navbar a {
 
 @media (min-width : 656px) {
   #new-form {
-    display: grid;
   }
 
   #new-form #user {
-    width: fit-content;
+    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .task-list {
+    margin-top: 1rem;
+    grid-row: 3;
+  
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
   }
 }
 
@@ -193,15 +204,6 @@ nav.navbar a {
     height: 6rem;
     width: fit-content;
   }
-}
-
-.task-list {
-  grid-column: -1;
-  grid-row: 2 / -1;
-}
-
-.task-list li {
-  list-style: none;
 }
 
 .task-button {
