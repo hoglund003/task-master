@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all.sort_by{|user| -user.points_at(params[:start_date], params[:end_date])}[0, 5] # Returs the 5 users with most points
+    @users = User.all.sort_by{|user| -user.points_at(params[:start_date], params[:end_date])}[0, 5].select{|user| user.points_at(params[:start_date], params[:end_date]) > 0} # Returs the 5 users with most points
     if turbo_frame_request?
       render partial: "users/scoreboard", locals: { users: @users }
       return
