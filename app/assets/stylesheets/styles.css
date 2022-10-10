@@ -276,6 +276,11 @@ nav.navbar a {
   padding: .5rem 2rem;
 }
 
+.full-date a {
+  color: white;
+  text-decoration: none;
+}
+
 #turbo-week .full-date {
   margin-left: auto;
   margin-bottom: 1rem;

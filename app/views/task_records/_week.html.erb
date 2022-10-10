@@ -1,6 +1,6 @@
 <% date_today = Date.today%>
 <span class="full-date">
-  <%= date_today.strftime('%e. of %b %Y') %>
+  <%= link_to date_today.strftime('%e. of %b %Y') %>
 </span>
 <div class="week" id="week">
   <% 5.times do |n|%>
