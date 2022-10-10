@@ -37,6 +37,11 @@ class TaskRecordsController < ApplicationController
   def destroy
     @task_record = TaskRecord.find(params[:id])
     @task_record.destroy
+    Change.create(task_record_id: @task_record.id, action: "delete")
     redirect_to task_records_path
+  end
+
+  def update
+    Change.create(task_record_id: @task_record.id, action: "edit")
   end
 end

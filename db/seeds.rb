@@ -4,6 +4,7 @@ task_names = ["Søppel", "Vanne", "Handling", "Støvsuger", "Oppvask", "Dekke bo
 User.delete_all
 Task.delete_all
 TaskRecord.delete_all
+Change.delete_all
 
 user_names.each do |user_name|
   User.create(name: user_name)
