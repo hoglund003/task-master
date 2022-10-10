@@ -259,6 +259,12 @@ nav.navbar a {
   #week a .wday .wday-name {
     margin-right: 10%;
   }
+
+  .record-card {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .full-date {
@@ -298,6 +304,10 @@ nav.navbar a {
   #week a .wday {
     display: flex;
     flex-direction: column;
+  }
+
+  .record-card {
+    display: block;
   }
 }
 
@@ -388,54 +398,72 @@ td button:hover {
   justify-content: center;
 }
 
-.record-card {
-  display: grid;
-  grid-template: repeat(4, 1fr) / repeat(3, 1fr);
-}
-
 .record-card a {
   color: var(--red);
 }
 
-.record-card .done-at {
-  grid-column: 1;
-  grid-row: 1;
+.record-card > *{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  font-size: 1.6rem;
+}
+
+.secondary {
+  color: rgb(47, 47, 47);
+}
+
+.record-card .secondary {
+  font-size: 0.8rem;
 }
 
 .record-card .task-name {
-  grid-column: 1;
-  grid-row: 2;
-
-  font-weight: 600;
-  font-size: 2rem;
+  grid-area: 1 / 1;
 }
 
 .record-card .points {
-  grid-column: -1;
-  grid-row: 2;
-
-  font-weight: 300;
-  font-size: 1.8rem;
+  grid-area: 1 / -2;
 }
 
 .record-card .username {
-  grid-column: 1;
-  grid-row: 3;
-
-  font-weight: 700;
-  font-size: 1.2rem;
-
-  margin-top: 1rem;
+  grid-area: 2 / 1;
 }
 
-.record-card .actions {
-  grid-column: 1;
-  grid-row: 4;
+.record-card .other-users {
+  background-color: rgb(231, 231, 231);
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
 
-  margin-top: 1rem;
+.record-card .other-users ul li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
 
+.record-card .other-users .title {
+  font-size: 1rem;
+}
+
+.record-card .done-at {
+  grid-area: 2 / -2;
+}
+
+.record-card .danger-zone {
+  grid-area: 3 / 1;
+
+  border: 2px solid var(--red);
+  border-radius: 0.8rem;
+  background-color: rgba(255, 0, 0, 0.238);
+  padding: 0.4rem 0.6rem;
+}
+
+.record-card .action-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1rem;
 }
 
 .user-card {

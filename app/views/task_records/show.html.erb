@@ -1,19 +1,46 @@
 <div class="container">
   <div class="record-card">
-    <span class="done-at">
-      At: <%= @task_record.done_at.strftime("%d.%m.%Y") %>
-    </span>
-    <span class="task-name">
+    <div class="task-name">
+      <span class="secondary">Task name:</span>
       <%= @task_record.name %>
-    </span>
-    <span class="points">
-      Points: <%= @task_record.points %>
-    </span>
-    <span class="username">
-      User: <%= link_to @task_record.user.name, @task_record.user %>
-    </span>
-    <span class="actions">
-      Actions: <%= button_to "Delete", @task_record, method: :delete %> <%= button_to "Edit" %>
-    </span>
+    </div>
+    <div class="points">
+      <span class="secondary">Points:</span>
+      <%= @task_record.points %>
+    </div>
+    <div class="username">
+      <span class="secondary">Done by:</span>
+      <%= link_to @task_record.user.name, @task_record.user %>
+      <% if @other_records_that_day.any? %>
+        <div class="other-users">
+          <p class="title">
+          Other users who did the task
+          </p>
+          <ul>
+            <% @other_records_that_day.each do |record| %>
+              <li>
+                <%= link_to record.user.name, record.user %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+    <div class="other">
+    </div>
+    <div class="done-at">
+      <span class="secondary">Done at:</span>
+      <%= @task_record.done_at.strftime("%d.%m.%Y") %>
+    </div>
+    <div class="danger-zone">
+      <span class="secondary">Danger zone</span>
+      <div class="action-container">
+        <%= link_to "Delete", @task_record, data: {"turbo-method": :delete, "turbo-confirm": "Are you sure?"} %> 
+        <%= link_to "Edit", @task_record, data: {"turbo-method": :edit} %>
+      </div>
+      <span class="secondary">*all changes will be loged!</span>
+    </div>
   </div>
 </div>
+
+<%= console %>
