@@ -179,6 +179,7 @@ nav.navbar a {
   max-width: 50rem;
   margin: auto;
   margin-top: 2rem;
+  margin-bottom: 10rem;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;

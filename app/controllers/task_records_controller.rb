@@ -1,6 +1,10 @@
 class TaskRecordsController < ApplicationController
   def index
-    @task_records = TaskRecord.all.order(done_at: :desc).page params[:page]
+    unless params[:user_id].nil?
+      @task_records = TaskRecord.all.where(user_id: params[:user_id]).order(done_at: :desc).page params[:page]
+    else
+      @task_records = TaskRecord.all.order(done_at: :desc).page params[:page]
+    end
   end
 
   def new

@@ -7,4 +7,8 @@
     <span class="score-place">Place: <%= link_to @user.place.ordinalize, users_path %></span>
     <%= column_chart(@chart_hash, colors: ["rgb(202, 0, 0)"]) %>
   </div>
+  <h3>All of <%= @user.name %>'s done tasks:</h3>
+  <turbo-frame id="turbo-task-records" src="<%= params[:id] %>/task_records">
+    Loading...
+  </turbo-frame>
 </div>
