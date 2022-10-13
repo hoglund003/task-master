@@ -35,7 +35,11 @@ class TaskRecordsController < ApplicationController
 
   def show
     @task_record = TaskRecord.find(params[:id])
-    @other_records_that_day = TaskRecord.all.where(task_id: @task_record.task_id, done_at: @task_record.done_at).where.not(user_id: @task_record.user_id).group(:user_id).uniq
+    begin
+      @other_records_that_day = TaskRecord.all.where(task_id: @task_record.task_id, done_at: @task_record.done_at).where.not(user_id: @task_record.user_id).group(:user_id).uniq
+    rescue
+      @other_records_that_day = []
+    end
   end
 
   def destroy
