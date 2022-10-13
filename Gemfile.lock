@@ -260,7 +260,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kaminari
-  pg
+  pg (~> 1.1)
   pry-rails
   puma (~> 5.0)
   rails (~> 7.0.4)
