@@ -8,6 +8,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -176,9 +177,9 @@ nav.navbar a {
 }
 
 .container {
-  max-width: 50rem;
+  max-width: 80rem;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 10rem;
   padding: 0 2rem;
   display: flex;
