@@ -6,13 +6,13 @@ class Task < ApplicationRecord
   def done?(selected_date=Date.today.to_s)
     selected_date = selected_date.to_date
     # Is the task done today?
-    TaskRecord.where(task_id: self.id, done_at: (selected_date.midnight)..(selected_date.midnight + 1.day)).any?
+    TaskRecord.where(task_id: self.id, done_at: (selected_date)..(selected_date + 1.day)).any?
   end
 
   def users(selected_date=Date.today.to_s)
     selected_date = selected_date.to_date
     # Returns the 4 Users who last did the task today
-    task_records = TaskRecord.where(task_id: self.id, done_at: (selected_date.midnight)..(selected_date.midnight + 1.day))
+    task_records = TaskRecord.where(task_id: self.id, done_at: (selected_date)..(selected_date + 1.day))
     User.where(id: task_records.map{|task_record|task_record.user_id}).last(4)
   end
 end
