@@ -9,10 +9,10 @@
     <%= render "week", selected_date: selected_date %>
     <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
       <%= f.hidden_field :selected_date, value: selected_date %>
-      <%= f.select(:user, users) %>
+      <%= f.select(:user, users, {prompt: "Select User"}) %>
       <div class="task-list">
         <% tasks.each do |task| %>
-            <%= render partial: "task_button", :locals => { :task => task, :selected_date => selected_date } %>
+          <%= render partial: "task_button", :locals => { :task => task, :selected_date => selected_date } %>
         <% end %>
       </div>
     <% end %>
