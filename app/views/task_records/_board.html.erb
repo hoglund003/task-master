@@ -1,6 +1,6 @@
 <turbo-frame id="turbo-week">
   <% flash.each do |type, msg| %>
-    <div id="msg" class="<%= type %>">
+    <div id="msg" class="<%= type %>" data-controller="flash" data-flash-target="flash">
       <%= msg %>
       <span onclick="document.getElementById('msg').remove()">x</span>
     </div>
