@@ -9,7 +9,7 @@ class TaskRecordsController < ApplicationController
 
   def new
     @task_record = TaskRecord.new
-    @users = User.all.map{|user| [user.name, user.id]}
+    @users = User.all
     @tasks = Task.all
     @selected_date = params[:date] || Date.today.to_s
 
@@ -23,7 +23,7 @@ class TaskRecordsController < ApplicationController
     @task_record = TaskRecord.new(user_id: params[:user], task_id: params[:task], done_at: params[:selected_date])
     
     if @task_record.save
-      @users = User.all.map{|user| [user.name, user.id]}
+      @users = User.all
       @tasks = Task.all
       flash.now[:notice] = "The task was saved!"
       render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:selected_date], }

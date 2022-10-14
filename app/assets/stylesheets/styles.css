@@ -224,10 +224,95 @@ nav.navbar a {
   transition: 0.2s;
 }
 
-#new-form button:hover {
-
+#new-form .task-button:hover {
   box-shadow: 4px 4px 5px 10px rgba(0, 0, 0, 0.1);
   transform: scale(1.1);
+}
+
+#new-form .users-button {
+  width: 100%;
+  padding: 1.4rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new-form .users-button:hover {
+  cursor: pointer;
+}
+
+.users-button .small-avatar {
+  width: 3rem;
+  margin-right: 0 0.8rem;
+  margin-left: auto;
+}
+.users-button .username {
+  margin-right: auto;
+}
+
+#new-form .user-button:hover {
+  cursor: pointer;
+}
+
+.user-modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(fit-content + 6rem);
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.229);  
+
+  display: flex;
+  justify-content: center;
+
+  /* diplay none default state */
+  display: none; 
+}
+
+.user-modal .content {
+  margin-top: 5rem;
+  padding: 1rem;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-modal .action-bar { 
+  display: flex;
+}
+
+.user-button {
+  width: 100%;
+  height: fit-content;
+  font-size: 1.2rem;
+  padding: 0.2rem 1.4rem;
+  border: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.user-button > * {
+  /* prevents select on child elements */
+  pointer-events: none;
+}
+
+.user-button .small-avatar {
+  width: 3rem;
+  margin-right: 0.8rem;
+}
+
+.user-button.cancel {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 #week {

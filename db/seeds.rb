@@ -1,4 +1,4 @@
-user_names = Array((1..5).map{|n| Faker::Name.name})
+user_names = Array((1..20).map{|n| Faker::Name.name})
 task_names = ["Søppel", "Vanne", "Handling", "Støvsuger", "Oppvask", "Dekke bord", "Vaske bord"]
 
 User.delete_all

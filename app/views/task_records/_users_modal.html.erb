@@ -1,0 +1,15 @@
+<div class="user-modal" data-modal-target="modal">
+  <div class="content">
+    <button class="user-button cancel" type="button" data-modal-target="calcel" data-action="modal#deselect">Cancel</button>
+    <% users.each do |user| %>
+      <button class="user-button" type="button" data-modal-target="user" data-id="<%= user.id %>" data-action="modal#select">
+      <div class="small-avatar">
+        <%= render partial: "users/avatar", locals: {user: user} %>
+      </div>
+        <div class="username">
+          <%= user.name%>
+        </div>
+      </button>
+    <% end %>
+  </div>
+</div>
