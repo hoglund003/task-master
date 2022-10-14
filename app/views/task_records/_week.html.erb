@@ -1,5 +1,5 @@
 <% date_today = Date.today%>
-<span class="full-date">
+<span class="full-date" data-controller="time">
   <%= link_to date_today.strftime('%e. of %b %Y') %>
 </span>
 <div class="week" id="week">
