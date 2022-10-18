@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates :name, presence: true, length: {minimum:2, maximum:30}
   has_many :task_records
+  has_one :slack_account
 
   def points
     task_records.sum {|record| record.points}
@@ -22,5 +23,10 @@ class User < ApplicationRecord
 
   def avatar_url
     "https://avatars.dicebear.com/api/initials/#{initials}.svg?radius=50"
+  end
+
+  def send_dm(text)
+    slack_client = Slack::Web::Client.new
+    slack_client.chat_postMessage(channel: slack_account.slack_id, text: text)
   end
 end

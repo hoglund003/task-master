@@ -9,8 +9,7 @@
     <%= render "week", selected_date: selected_date %>
     <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
       <%= f.hidden_field :selected_date, value: selected_date %>
-      <button class="users-button" type="button" data-modal-target="opener" data-action="click->modal#open">Select User</button>
-      <%= f.hidden_field :user, data: { modal_target: "output" } %>
+      <%= f.hidden_field :task, data: { modal_target: "output" } %>
       <%= render partial: "users_modal", locals: {:users => @users} %>
       <div class="task-list">
         <% tasks.each do |task| %>

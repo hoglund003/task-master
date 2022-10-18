@@ -1,5 +1,5 @@
 <%# Style button based on status %>
-<button class="task-button <%= task.done?(selected_date) ? "done" : "not-done" %>" type="submit" name="task" value="<%= task.id %>">
+<button class="task-button <%= task.done?(selected_date) ? "done" : "not-done" %>" type="button" name="task" data-id="<%= task.id %>" data-modal-target="opener" data-action="click->modal#open">
   <%# Hide avatar if task not done %>
   <div class="avatar"> 
     <% if task.done?(selected_date) %>

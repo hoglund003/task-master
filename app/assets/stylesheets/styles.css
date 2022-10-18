@@ -229,31 +229,6 @@ nav.navbar a {
   transform: scale(1.1);
 }
 
-#new-form .users-button {
-  width: 100%;
-  padding: 1.4rem;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  border-radius: 1rem;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#new-form .users-button:hover {
-  cursor: pointer;
-}
-
-.users-button .small-avatar {
-  width: 3rem;
-  margin-right: 0 0.8rem;
-  margin-left: auto;
-}
-.users-button .username {
-  margin-right: auto;
-}
-
 #new-form .user-button:hover {
   cursor: pointer;
 }
