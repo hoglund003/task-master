@@ -2,11 +2,13 @@ slack_client = Slack::Web::Client.new
 users = slack_client.conversations_members(channel: '#generelt-base64')[:members]
 
 task_names = ["Trash", "Watering", "Shopping", "Vacuum", "Dishes", "Set table", "Clean table"]
+assignment_replies = ["accepted", "denied"]
 
 User.delete_all
 SlackAccount.delete_all
 Task.delete_all
 TaskRecord.delete_all
+TaskAssignment.delete_all
 Change.delete_all
 
 users.each do |id|
@@ -23,4 +25,8 @@ User.all.each do |user|
   rand(15..60).times do 
     TaskRecord.create(user_id: user.id, task_id: Task.pluck(:id).sample, done_at: rand((Date.today - 200.days)..(Date.today - 1.day)))
   end
+end
+
+10.times do 
+  TaskAssignment.create!(user_id: User.pluck(:id).sample, task_id: Task.pluck(:id).sample, reply: assignment_replies.sample, date: rand((Date.today - 200.days)..(Date.today - 1.day)))
 end
