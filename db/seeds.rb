@@ -1,13 +1,18 @@
-user_names = Array((1..20).map{|n| Faker::Name.name})
-task_names = ["Søppel", "Vanne", "Handling", "Støvsuger", "Oppvask", "Dekke bord", "Vaske bord"]
+slack_client = Slack::Web::Client.new
+users = slack_client.conversations_members(channel: '#generelt-base64')[:members]
+
+task_names = ["Trash", "Watering", "Shopping", "Vacuum", "Dishes", "Set table", "Clean table"]
 
 User.delete_all
+SlackAccount.delete_all
 Task.delete_all
 TaskRecord.delete_all
 Change.delete_all
 
-user_names.each do |user_name|
-  User.create(name: user_name)
+users.each do |id|
+  user = slack_client.users_info(user: id)[:user]
+  user_record = User.create(name: user[:real_name].split(" ")[0])
+  SlackAccount.create(slack_id: id, user_id: user_record.id)
 end
 
 task_names.each do |task_name|
