@@ -68,4 +68,6 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
   config.hotwire_livereload.listen_paths << Rails.root.join("app/views")
+
+  config.hosts << ENV['NGROK_URL']
 end
