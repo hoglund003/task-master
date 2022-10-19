@@ -29,4 +29,15 @@ class User < ApplicationRecord
     slack_client = Slack::Web::Client.new
     slack_client.chat_postMessage(channel: slack_account.slack_id, text: text)
   end
+
+  def send_block(block, text)
+    slack_client = Slack::Web::Client.new
+    slack_client.chat_postMessage(channel: slack_account.slack_id, blocks: block, text: text)
+  end
+
+  def assign_task(task_id)
+    assignment = TaskAssignment.create(user_id: id, task_id: task_id, reply: nil)
+    block = assignment.slack_block
+    send_block(block, "You have thing to be done! :D")
+  end
 end
