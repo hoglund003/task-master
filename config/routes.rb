@@ -7,5 +7,11 @@ Rails.application.routes.draw do
   # resources :stats, only: [:index]
   get "stats", :to => "static_pages#under_construction"
 
+  scope '/api' do 
+    scope '/v1' do 
+      post "slack", :to => "slack#slack"
+    end
+  end
+
   root "task_records#new"
 end
