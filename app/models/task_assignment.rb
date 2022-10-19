@@ -47,4 +47,12 @@ class TaskAssignment < ApplicationRecord
       }
     ]
   end
+
+  def slack_accept_block
+    {"replace_original": "true","text": "Great, you accepted! Please do the task: #{task.name}"}
+  end
+
+  def slack_deny_block
+    {"replace_original": "true","text": "That's ok. I'll assign you a task another time. ;)"}
+  end
 end
