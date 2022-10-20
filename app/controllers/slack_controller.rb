@@ -25,8 +25,10 @@ class SlackController < ApplicationController
     # Select type of response
     if reply == "accepted"
       request.body = assignment.slack_accept_block.to_json
+      response = http.request(request)
     elsif reply == "denied"
       request.body = assignment.slack_deny_block.to_json
+      response = http.request(request)
     end
   end
 end
