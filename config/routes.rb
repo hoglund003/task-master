@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do 
     resources :task_records, only: [:index]
   end
-  # resources :stats, only: [:index]
-  get "stats", :to => "static_pages#under_construction"
+  resources :stats, only: [:index]
 
   scope '/api' do 
     scope '/v1' do 
