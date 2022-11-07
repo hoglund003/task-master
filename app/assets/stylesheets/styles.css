@@ -627,7 +627,7 @@ td button:hover {
   margin-top: 3rem;
   width: 100%;
   align-self: center;
-
+  margin-top: 15rem;
 
   display: grid;
   grid: 1fr 3fr / 1fr;
