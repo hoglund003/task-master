@@ -17,5 +17,6 @@
         <% end %>
       </div>
     <% end %>
+    <%= render partial: "users/badge", locals: { user: user_of_the_month(@users) } %>
   </div>
 </turbo-frame>

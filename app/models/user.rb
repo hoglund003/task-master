@@ -12,6 +12,13 @@ class User < ApplicationRecord
     task_records.where(done_at: (start_date)..(end_date)).sum {|record| record.points}
   end
 
+  def points_last_month
+    today = Date.today
+    start_date = Date.new(today.year, today.prev_month.mon)
+    end_date = Date.new(today.year, today.month, 1)
+    points_at(start_date, end_date)
+  end
+
   def initials
     name.split.map{|s| s[0]}.join
   end

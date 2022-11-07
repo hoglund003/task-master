@@ -617,3 +617,59 @@ td button:hover {
   grid-column: 1 / -1;
   grid-row: 4;
 }
+
+.badge {
+  background-color: white;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+
+  border-radius: 1rem;
+  padding: 1rem 1.4rem;
+  margin-top: 3rem;
+  width: 100%;
+  align-self: center;
+
+
+  display: grid;
+  grid: 1fr 3fr / 1fr;
+
+  background-color: rgb(41, 39, 52);
+  max-width: 700px;
+}
+
+.badge a {
+  text-decoration: none;
+}
+
+.badge h4 {
+  color: rgb(204, 200, 224);
+}
+
+.badge .small-avatar {
+  justify-content: start;
+}
+
+
+.badge .small-avatar h2 {
+  margin: auto 0;
+  margin-left: 1rem;
+}
+
+.badge h2 {
+  padding: 0.5rem;
+  background-image: linear-gradient(
+	to right,
+	#462523 0,
+  #cb9b51 22%, 
+	#f6e27a 45%,
+	#f6f2c0 50%,
+	#f6e27a 55%,
+	#cb9b51 78%,
+	#462523 100%
+	);
+  color: transparent;
+  -webkit-background-clip:text;
+}
+
+.badge h2:last-of-type {
+  margin-left: auto;
+}
