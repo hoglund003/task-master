@@ -1,18 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "opener", "modal", "task", "output" ]
-  static defaultString
+  static targets = [ "opener", "modal"]
 
-  connect() {
-    this.defaultString = this.openerTarget.innerHTML
-  }
-
-  open(event) {
+  open() {
     this.modalTarget.style.display = "flex"
-    const element = event.target
-    this.outputTarget.value = element.dataset.id
-    scroll(0, 0)
   }
 
   close() {
@@ -20,7 +12,6 @@ export default class extends Controller {
   }
 
   deselect() {
-    console.log(this.defaultString)
     this.openerTarget.innerHTML = this.defaultString
     this.close()
   }

@@ -5,11 +5,11 @@
       <span onclick="document.getElementById('msg').remove()">x</span>
     </div>
   <% end %>
-  <div class="container" data-controller="modal">
+  <div class="container" data-controller="modal input">
     <%= render "week", selected_date: selected_date %>
     <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
       <%= f.hidden_field :selected_date, value: selected_date %>
-      <%= f.hidden_field :task, data: { modal_target: "output" } %>
+      <%= f.hidden_field :task, data: { input_target: "output" } %>
       <%= render partial: "users_modal", locals: {:users => @users} %>
       <div class="task-list">
         <% tasks.each do |task| %>

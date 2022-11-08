@@ -1,6 +1,6 @@
 <div class="user-modal" data-modal-target="modal">
   <div class="content">
-    <button class="user-button cancel" type="button" data-modal-target="calcel" data-action="modal#deselect">Cancel</button>
+    <button class="user-button cancel" type="button" data-action="modal#deselect">Cancel</button>
     <% users.each do |user| %>
       <button class="user-button" type="submit" data-modal-target="user" name="user" value="<%= user.id %>">
       <div class="small-avatar">
