@@ -425,6 +425,15 @@ nav.navbar a {
   align-items: center;
 }
 
+.points {
+  font-size: 1.8rem;
+  color: var(--red);
+}
+
+.task-button .points {
+  margin-left: auto;
+}
+
 .avatar {
   height: 4rem;
   width: 4rem;
