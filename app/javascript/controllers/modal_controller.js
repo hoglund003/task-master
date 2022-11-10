@@ -12,7 +12,6 @@ export default class extends Controller {
   }
 
   deselect() {
-    this.openerTarget.innerHTML = this.defaultString
     this.close()
   }
   
