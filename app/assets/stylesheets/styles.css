@@ -129,7 +129,7 @@ nav.navbar .bottom a {
   font-weight: bold;
 }
 
-@media (min-width : 835px) {
+@media (min-width : 800px) {
   nav.navbar .top {
     justify-content: space-between;
   }
@@ -141,7 +141,7 @@ nav.navbar .bottom a {
   }
 }
 
-@media (max-width : 835px) {
+@media (max-width : 800px) {
   nav.navbar a {
     display: none;
   }
@@ -340,7 +340,7 @@ nav.navbar a {
   grid-row: 2;
 }
 
-@media (min-width : 835px) {
+@media (min-width : 800px) {
   #new-form #user {
     width: 100%;
     grid-column: 1 / -1;
@@ -396,7 +396,7 @@ nav.navbar a {
   margin-bottom: 1rem;
 }
 
-@media (max-width : 835px) {
+@media (max-width : 800px) {
   #new-form #user {
     width: 100%;
     margin-bottom: 1rem;
