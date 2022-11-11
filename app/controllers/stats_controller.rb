@@ -4,10 +4,11 @@ class StatsController < ApplicationController
     tasks = Task.all
     users = User.all
 
+    # Show number of tasks node each date
     @tasks_per_day = {}
     records.each do |record|
       record_date = record.done_at.midnight.to_date
-      @tasks_per_day[record_date] = TaskRecord.all.where(done_at: (record_date)..(record_date + 1.day)).count
+      @tasks_per_day[record_date] = TaskRecord.all.where(done_at: record_date).count
     end
 
     @types_of_tasks_done = {}
