@@ -7,8 +7,9 @@ class StatsController < ApplicationController
     # Show number of tasks node each date
     @tasks_per_day = {}
     records.each do |record|
-      record_date = record.done_at.midnight.to_date
-      @tasks_per_day[record_date] = TaskRecord.all.where(done_at: record_date).count
+      record_date = record.done_at.to_date
+      
+      @tasks_per_day[record_date] = TaskRecord.all.where(done_at: record_date).uniq{|t| t.task_id}.count
     end
 
     @busiest_days = {}
