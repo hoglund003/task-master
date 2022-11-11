@@ -5,6 +5,7 @@ const weekButtons = document.querySelectorAll(".wday");
 const hiddemDateInput = document.querySelector("#selected_date");
 const newForm = document.querySelector("#new-form");
 
+var i;
 var navbarExpanded = false;
 
 menuButton.addEventListener('click', () => {
@@ -12,14 +13,18 @@ menuButton.addEventListener('click', () => {
   if (!navbarExpanded) {
     navbarExpanded = true;
     menuButton.focus();
+    i = 1
     navBottomATags.forEach(child=>{
-      child.style.display = "block";
+      child.classList.remove("not-appere");
+      child.classList.add("appere", "appere" + i);
+      i++
     });
   } else {
     navbarExpanded = false;
     menuButton.blur();
     navBottomATags.forEach(child=>{
-      child.style.display = "none";
+      child.classList.remove("appere");
+      child.classList.add("not-appere");
     });
   }
 });
@@ -29,7 +34,8 @@ document.addEventListener('click', (e) => {
   if (!navbar.contains(e.target)) {
     navbarExpanded = false;
     navBottomATags.forEach(child=>{
-      child.style.display = "none";
+      child.classList.remove("appere");
+      child.classList.add("not-appere");
     });
   }
 });

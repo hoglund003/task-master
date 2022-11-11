@@ -119,6 +119,7 @@ nav.navbar .menu-button div{
   border-radius: 5px;
   margin: 5px 0;
 }
+
 nav.navbar .bottom a {
   border: 2px solid white;
   border-radius: 5px;
@@ -136,16 +137,17 @@ nav.navbar .bottom a {
   nav.navbar .menu-button {
     display: none;
   }
-  nav.navbar .bottom a {
-    display: none;
-  }
 }
 
 @media (max-width : 800px) {
-  nav.navbar a {
+  /* nav.navbar .top {
+    position: absolute;
+    width: 95%;
+  } */
+  nav.navbar .top a {
     display: none;
   }
-  nav.navbar h1 a {
+  nav.navbar .top h1 a {
     display: block;
   }
   nav.navbar .menu-button {
@@ -160,6 +162,25 @@ nav.navbar > * {
 nav.navbar a {
   color: white;
   text-decoration: none;
+}
+
+@keyframes example {
+  from {position: relative; right: -1000px;}
+  to {position: relative; right: 0;}
+}
+
+.appere {
+  display: block;
+  animation-name: example;
+}
+
+.appere1 {animation-duration: 2.1s;}
+.appere2 {animation-duration: 2.2s;}
+.appere3 {animation-duration: 2.3s;}
+.appere4 {animation-duration: 2.4s;}
+
+.not-appere {
+  display: none;
 }
 
 .notice {

@@ -13,10 +13,10 @@
     </button>
   </div>
   <div class="bottom">
-    <%= link_to "Home", new_task_record_path %>
-    <%= link_to "Score Board", users_path %>
+    <%= link_to "Home", new_task_record_path, class: "not-appere" %>
+    <%= link_to "Score Board", users_path, class: "not-appere" %>
     <%# = link_to "Stats", stats_path %>
-    <a>Sats</a>
-    <%= link_to "Log", task_records_path %>
+    <a class="not-appere">Sats</a>
+    <%= link_to "Log", task_records_path, class: "not-appere" %>
   </div>
 </nav>
