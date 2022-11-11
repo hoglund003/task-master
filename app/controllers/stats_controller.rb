@@ -11,13 +11,6 @@ class StatsController < ApplicationController
       @tasks_per_day[record_date] = TaskRecord.all.where(done_at: record_date).count
     end
 
-    @types_of_tasks_done = {}
-    tasks.each do |task|
-      all_tasks_done = TaskRecord.all.where(task_id: task.id).count
-      number_of_weeks_recorded = (TaskRecord.last.done_at.to_date.mjd - TaskRecord.first.done_at.to_date.mjd) / 7
-      @types_of_tasks_done[task.name] = all_tasks_done / number_of_weeks_recorded
-    end
-
     @busiest_days = {}
     Date::DAYNAMES[1..-2].each_with_index do |dayname, index|
       all_records_wday = TaskRecord.all.select{|record| record.done_at.wday == index}.count
