@@ -430,6 +430,7 @@ nav.navbar a {
   width: fit-content;
   border: none;
   padding: 1rem 2rem;
+  padding-right: 0;
   width:  100%;
 
   display: flex;
@@ -437,8 +438,12 @@ nav.navbar a {
 }
 
 .points {
-  font-size: 1.8rem;
-  color: var(--red);
+  font-size: 1.2rem;
+  color: var(--green);
+  position:relative;
+  top: -1.5em;
+  right: 1em;
+
 }
 
 .task-button .points {
