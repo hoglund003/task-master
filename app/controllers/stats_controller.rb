@@ -1,6 +1,6 @@
 class StatsController < ApplicationController
   def index
-    records = TaskRecord.all.order(:done_at => :DESC).first(30)
+    records = TaskRecord.all.order(:done_at => :DESC).first(60)
     tasks = Task.all
     users = User.all
 
@@ -12,10 +12,11 @@ class StatsController < ApplicationController
     end
 
     @busiest_days = {}
-    Date::DAYNAMES[1..-2].each_with_index do |dayname, index|
-      all_records_wday = TaskRecord.all.select{|record| record.done_at.wday == index}.count
-      all_wdays_recorded = TaskRecord.pluck(:done_at).uniq.select{|date| date.wday == index}.count
-      @busiest_days[dayname] = all_records_wday / all_wdays_recorded
+    Date::DAYNAMES[1..-2].each_with_index do |dayname, index| # Loop Monday to Friday
+      all_records_wday = TaskRecord.all.select{|record| record.done_at.wday == index}.count # all records that was none on this weekday
+      all_wdays_recorded = TaskRecord.all.pluck(:done_at).uniq.select{|date| date.wday == index}.count
+      # binding.pry
+      @busiest_days[dayname] = all_records_wday/ [all_wdays_recorded, 1].max
     end
   end
 end
