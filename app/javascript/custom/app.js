@@ -12,7 +12,7 @@ menuButton.addEventListener('click', () => {
   // Toggle menu apperance
   if (!navbarExpanded) {
     navbarExpanded = true;
-    menuButton.focus();
+    menuButton.classList.add("active");
     i = 1
     navBottomATags.forEach(child=>{
       child.classList.remove("not-appere");
@@ -21,7 +21,7 @@ menuButton.addEventListener('click', () => {
     });
   } else {
     navbarExpanded = false;
-    menuButton.blur();
+    menuButton.classList.remove("active");
     navBottomATags.forEach(child=>{
       child.classList.remove("appere");
       child.classList.add("not-appere");
