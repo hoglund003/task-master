@@ -101,15 +101,11 @@ nav.navbar .menu-button {
   border: 2px solid white;
   border-radius: 10px;
 
-  transition: 0.5s;
+  /* transition: 0.5s; */
 }
 
 nav.navbar .menu-button:hover {
   cursor: pointer;
-}
-
-nav.navbar .menu-button:focus {
-  transform: scale(1.1);
 }
 
 nav.navbar .menu-button div{
@@ -153,7 +149,45 @@ nav.navbar .bottom a {
   nav.navbar .menu-button {
     display: block;
   }
+  .menu-button {
+    width: 44px;
+    height: 49px;
+  }
+  .menu-button div {
+    transition: .5s ease-in-out;
+  }
+
+  .menu-button div:nth-child(1) {
+    transform-origin: left center;
+  }
+  .menu-button div:nth-child(2) {
+    transform-origin: left center;
+  }
+  .menu-button div:nth-child(3) {
+    transform-origin: left center;
+  }
+  .menu-button.active {
+    width: 44px;
+    height: 49px;
+  }
+  .menu-button.active div:nth-child(1) {
+    transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
+    width: 29px;
+  }
+  .menu-button.active div:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  .menu-button.active div:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
+    width: 29px;
+  }
 }
+
 
 nav.navbar > * {
   cursor: pointer;
