@@ -280,6 +280,8 @@ nav.navbar a {
 #new-form {
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 0.4fr 1fr 6fr;
+
+  margin-bottom: 5rem;
 }
 
 #new-form select, #new-form button {
@@ -710,16 +712,24 @@ td button:hover {
 
   border-radius: 1rem;
   padding: 1rem 1.4rem;
-  margin-top: 3rem;
   width: 100%;
   align-self: center;
-  margin-top: 15rem;
+  margin-top: auto;
 
   display: grid;
   grid: 1fr 3fr / 1fr;
 
   background-color: rgb(41, 39, 52);
   max-width: 700px;
+}
+
+.badge.week {
+  font-size: 0.8rem;
+  width: 80%;
+  max-width: 580px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: rgb(23, 21, 37);
 }
 
 .badge a {
