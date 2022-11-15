@@ -17,6 +17,7 @@
         <% end %>
       </div>
     <% end %>
-    <%= render partial: "users/badge", locals: { user: user_of_the_month(@users) } %>
+    <%= render partial: "users/badge", locals: { user: user_of_last_month(@users), title: "Best of last month:", points: user_of_last_month(@users).points_last_month, badge_class: "month" } %>
+    <%= render partial: "users/badge", locals: { user: user_of_last_week(@users), title: "Best of last week:", points: user_of_last_week(@users).points_last_week, badge_class: "week" } %>
   </div>
 </turbo-frame>

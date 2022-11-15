@@ -19,6 +19,15 @@ class User < ApplicationRecord
     points_at(start_date, end_date)
   end
 
+  def points_last_week
+    today = Date.today
+    monday_last_week = (today - 1.week).beginning_of_week
+    sunday_last_week = (today - 1.week).end_of_week
+    start_date = monday_last_week
+    end_date = sunday_last_week
+    points_at(start_date, end_date)
+  end
+
   def initials
     name.split.map{|s| s[0]}.join
   end
