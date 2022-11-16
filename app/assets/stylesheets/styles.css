@@ -769,3 +769,20 @@ td button:hover {
 .badge h2:last-of-type {
   margin-left: auto;
 }
+
+/* Leader board */
+
+.podium {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.podium > * {
+  background-color: var(--red-transparent);
+  padding: 4rem;
+  font-size: 4rem;
+  height: 40rem;
+}
+
+/* ----- */
