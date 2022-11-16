@@ -6,7 +6,7 @@ export default class extends Controller {
     // check time every minute
     setInterval(() => {
       var date = new Date();
-      if (date.getHours() == 0 && date.getMinutes() == 1) { // reload if time == 00:01
+      if (date.getHours() == 1 && date.getMinutes() == 1) { // reload if time == 01:01
         window.location.reload()
       }
     }, 1000 * 60)
