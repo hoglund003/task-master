@@ -773,6 +773,21 @@ td button:hover {
 }
 
 /* Leader board */
+@keyframes podium1 {
+  from { transform: translateY(1600px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes podium2 {
+  from { transform: translateY(1800px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes podium3 {
+  from { transform: translateY(2000px); }
+  to { transform: translateY(0); }
+}
+ 
 .podium-container {
   width: 50%;
   height: 40rem;
@@ -803,23 +818,50 @@ td button:hover {
   justify-content: center;
 }
 
-.podium img:nth-child(1) { grid-row: 1; grid-column: 2; }
-.podium img:nth-child(2) { grid-row: 2; grid-column: 3; }
-.podium img:nth-child(3) { grid-row: 3; grid-column: 1; }
+.podium img:nth-child(1) {
+  grid-row: 1; 
+  grid-column: 2; 
+
+  animation-duration: 3s;
+  animation-name: podium1;
+}
+.podium img:nth-child(2) {
+  grid-row: 2; 
+  grid-column: 3;
+
+  animation-duration: 2s;
+  animation-name: podium2;
+}
+.podium img:nth-child(3) {
+  grid-row: 3; 
+  grid-column: 1;
+  
+  animation-duration: 1s;
+  animation-name: podium3;
+}
 
 .podium .first {
   grid-row: 2 / -1;
   grid-column: 2;
+
+  animation-duration: 3s;
+  animation-name: podium1;
 }
 
 .podium .second {
   grid-row: 3 / -1;  
   grid-column: 3;
+
+  animation-duration: 2s;
+  animation-name: podium2;
 }
 
 .podium .third {
   grid-row: 4/ -1;
   grid-column: 1;
+
+  animation-duration: 1s;
+  animation-name: podium3;
 }
 
 .podium .avatar {
