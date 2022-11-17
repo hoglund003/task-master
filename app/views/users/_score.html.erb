@@ -1,0 +1,16 @@
+<a href="<%= user_path(user) %>">
+  <div class="user">
+    <span class="place">
+      <%= user.place %>
+    </span>
+    <span class="avatar">
+      <%= render partial: "avatar", locals: {user: user}  %>
+    </span>
+    <span class="username">
+      <%= user.name %>
+    </span>
+    <span class="user-points">
+      <%= user.points %>p
+    </span>
+  </div>
+</a>
