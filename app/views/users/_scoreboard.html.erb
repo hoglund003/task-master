@@ -2,9 +2,9 @@
   <div class="container">
     <div class="podium-container">
       <div class="podium">
-        <%= render partial: "avatar", locals: {user: @users.third}  %> <%# third %>
-        <%= render partial: "avatar", locals: {user: @users.second}  %> <%# second %>
-        <%= render partial: "avatar", locals: {user: @users.first}  %> <%# first %>
+        <% users.first(3).each do |user| %>
+          <%= render partial: "avatar", locals: {user: user}  %>
+        <% end %>
         <div class="third">3</div>
         <div class="first">1</div>
         <div class="second">2</div>

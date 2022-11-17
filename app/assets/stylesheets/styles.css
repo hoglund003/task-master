@@ -270,7 +270,7 @@ nav.navbar a {
 
 .sort-button {
   background-color: white;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   padding: 0.6rem 2rem;
   border: none;
   border-bottom: 2px solid transparent;
@@ -803,9 +803,9 @@ td button:hover {
   justify-content: center;
 }
 
-.podium img:nth-child(1) { grid-row: 3; grid-column: 1; }
-.podium img:nth-child(3) { grid-row: 1; grid-column: 2; }
+.podium img:nth-child(1) { grid-row: 1; grid-column: 2; }
 .podium img:nth-child(2) { grid-row: 2; grid-column: 3; }
+.podium img:nth-child(3) { grid-row: 3; grid-column: 1; }
 
 .podium .first {
   grid-row: 2 / -1;
@@ -846,7 +846,7 @@ td button:hover {
 
   width: 100%;
   padding: 0 20%;
-  padding-top: 10rem;
+  padding-top: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -891,6 +891,10 @@ td button:hover {
 .score-board a {
   color: black;
   text-decoration: none;
+}
+
+hr {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* ----- */
