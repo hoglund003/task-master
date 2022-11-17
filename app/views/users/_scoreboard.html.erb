@@ -1,48 +1,25 @@
 <turbo-frame id="turbo-scoreboard">
   <div class="container">
-    <% today = Date.today %>
-    <% this_month = Date.new(today.year, today.month) %>
-    <% last_month = Date.new(today.year, today.prev_month.month)%>
-    <% next_month = Date.new(today.year, today.next_month.month) %>
-    <div class="button-container">
-      <a href="/users">
-        <button class="sort-button <%= params[:start_date] == nil ? "active" : "" %>">Ever</button>
-      </a>
-      <a href="/users?start_date=<%= last_month %>&end_date=<%= this_month %>">
-        <button class="sort-button <%= params[:end_date] == this_month.to_s ? "active" : "" %>">Last month (<%= Date::MONTHNAMES[last_month.month] %>)</button>
-      </a>
-      <a href="/users?start_date=<%= this_month %>&end_date=<%= next_month %>">
-        <button class="sort-button <%= params[:start_date] == this_month.to_s ? "active" : "" %>">This month (<%= Date::MONTHNAMES[this_month.month] %>)</button>
-      </a>
+    <div class="podium-container">
+      <div class="podium">
+        <% users.first(3).each do |user| %>
+          <%= render partial: "avatar", locals: {user: user}  %>
+        <% end %>
+        <div class="third">3</div>
+        <div class="first">1</div>
+        <div class="second">2</div>
+      </div>
     </div>
-    <% if @users.any? %>
-      <table>
-        <thead>
-          <tr>
-            <td></td>
-            <td class="username-td">Name</td>
-            <td>Points</td>
-            <td></td>
-          </tr>
-        </thead>
-        <tbody>
-          <% users.each do |user| %>
-            <tr>
-              <td>
-                <div class="small-avatar">
-                  <%= image_tag user.avatar_url %>
-                </div>
-              </td>
-              <td class="username-coll"><%= user.name %></td>
-              <td><%= user.points_at(params[:start_date], params[:end_date]) %></td>
-              <td><%= button_to "…", user, method: :get %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% else %>
-      <%# if no one got any points %>
-      <h2>No recorded points for this period</h2>
-    <% end %>
+    <div class="score-board">
+    <div class="button-container">
+    <%= link_to "All Time", "/users", method: :get, class:"sort-button" %>
+    <%= link_to "Week", "/users?start_date=#{Date.today.beginning_of_week.to_s}&end_date=#{Date.today.end_of_week.to_s}", method: :get, class:"sort-button" %>
+    <%= link_to "Month", "/users?start_date=#{Date.today.beginning_of_month.to_s}&end_date=#{Date.today.end_of_month.to_s}", method: :get, class:"sort-button" %>
+    </div>
+      <hr>
+      <% users.each_with_index do |user, index| %>
+        <%= render partial: "score", locals: { user: user, place: index + 1, points: user.points_at(params[:start_date], params[:end_date]) } %>
+      <% end %>
+    </div>
   </div>
 </turbo-frame>
