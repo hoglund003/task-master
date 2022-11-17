@@ -18,7 +18,7 @@
     </div>
       <hr>
       <% users.each_with_index do |user, index| %>
-        <%= render partial: "score", locals: { user: user, place: index + 1, points: user.points_at(params[:start_date], params[:end_date]) } %>
+        <%= render partial: "score", locals: { user: user, place: index + 1, points: user.points_at(params[:start_date], params[:end_date]), delay: index } %>
       <% end %>
     </div>
   </div>
