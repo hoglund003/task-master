@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 :root {
   --green: rgb(22, 163, 0);
   --red: rgb(202, 0, 0);
@@ -775,14 +777,31 @@ td button:hover {
 .podium {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1rem;
+  align-items: flex-end;
 }
 
 .podium > * {
-  background-color: var(--red-transparent);
-  padding: 4rem;
-  font-size: 4rem;
+  background-color: var(--red);
+  color: white;
+  font-family: 'Anton', sans-serif;
+  font-size: 6rem;
   height: 40rem;
+  padding: 3rem;
+  padding-top: 0;
+}
+
+.podium .first {
+  height: 35rem;
+}
+
+.podium .second {
+  height: 30rem;
+}
+
+.podium .third {
+  height: 25rem;
 }
 
 /* ----- */
