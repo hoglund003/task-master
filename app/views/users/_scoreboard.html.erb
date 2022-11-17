@@ -11,8 +11,14 @@
       </div>
     </div>
     <div class="score-board">
-      <% users.each do |user| %>
-        <%= render partial: "score", locals: { user: user } %>
+    <div class="button-container">
+    <%= link_to "All Time", "/users", method: :get, class:"sort-button" %>
+    <%= link_to "Week", "/users?start_date=#{Date.today.beginning_of_week.to_s}&end_date=#{Date.today.end_of_week.to_s}", method: :get, class:"sort-button" %>
+    <%= link_to "Month", "/users?start_date=#{Date.today.beginning_of_month.to_s}&end_date=#{Date.today.end_of_month.to_s}", method: :get, class:"sort-button" %>
+    </div>
+      <hr>
+      <% users.each_with_index do |user, index| %>
+        <%= render partial: "score", locals: { user: user, place: index + 1 } %>
       <% end %>
     </div>
   </div>
