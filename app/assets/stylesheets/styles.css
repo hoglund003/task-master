@@ -775,33 +775,45 @@ td button:hover {
 /* Leader board */
 
 .podium {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  align-self: center;
+
+  width: 80%;
+  display: grid;
+  grid: repeat(5, 1fr) / repeat(3, 1fr);
   gap: 1rem;
-  align-items: flex-end;
 }
 
-.podium > * {
+.podium > *:not(img) {
+
   background-color: var(--red);
   color: white;
   font-family: 'Anton', sans-serif;
   font-size: 6rem;
-  height: 40rem;
+
   padding: 3rem;
   padding-top: 0;
+
+  display: flex;
+  justify-content: center;
 }
 
+.podium img:nth-child(1) { grid-row: 3; grid-column: 1; }
+.podium img:nth-child(3) { grid-row: 1; grid-column: 2; }
+.podium img:nth-child(2) { grid-row: 2; grid-column: 3; }
+
 .podium .first {
-  height: 35rem;
+  grid-row: 2 / -1;
+  grid-column: 2;
 }
 
 .podium .second {
-  height: 30rem;
+  grid-row: 3 / -1;  
+  grid-column: 3;
 }
 
 .podium .third {
-  height: 25rem;
+  grid-row: 4/ -1;
+  grid-column: 1;
 }
 
 /* ----- */
