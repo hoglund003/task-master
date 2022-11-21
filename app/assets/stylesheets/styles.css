@@ -955,3 +955,16 @@ hr {
 }
 
 /* ----- */
+
+/* Instructions */
+
+.instruction-link {
+  font-size: 3rem;
+  text-decoration: none;
+  color: black;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+  padding: 1rem 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ----- */

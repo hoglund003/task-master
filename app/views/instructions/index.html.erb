@@ -1,0 +1,5 @@
+<div class="container">
+  <% @instructions.each do |instruction| %>
+    <%= link_to instruction.task.name, instruction_path(instruction), class:"instruction-link" %>
+  <% end %>
+</div>
