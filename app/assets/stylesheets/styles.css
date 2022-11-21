@@ -400,6 +400,10 @@ nav.navbar a {
   color: rgba(0, 0, 0, 0.552);
 }
 
+.top-container {
+  display: flex;
+}
+
 #new-form #user {
   grid-column: 1;
   grid-row: 2;
