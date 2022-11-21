@@ -973,9 +973,10 @@ hr {
 
 .instruction p {
   font-size: 2rem;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.6rem;
+
 }
-
-
 
 .instruction .back-button {
   width: 100%;
@@ -996,7 +997,7 @@ hr {
   }
 }
 
-@media (min-width : 800px) {
+@media (min-width : 801px) {
   .back-button {
     display: none;
   }
