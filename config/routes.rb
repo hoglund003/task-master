@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'static_pages/under_construction', :to => "under_construction#static_pages"
   resources :task_records, only: [:index, :new, :create, :show, :destroy]
-  resources :instructions, only: [:index]
+  resources :instructions, only: [:index, :show]
   resources :users, only: [:index, :show] do 
     resources :task_records, only: [:index]
   end
