@@ -967,4 +967,40 @@ hr {
   margin-bottom: 1.5rem;
 }
 
+.instruction h1 {
+  font-size: 5rem;
+}
+
+.instruction p {
+  font-size: 2rem;
+}
+
+
+
+.instruction .back-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  border: none;
+  background-color: var(--red);
+  color: white;
+  justify-content: center;
+  
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+@media (max-width : 800px) {
+  .back-button {
+    display: flex;
+  }
+}
+
+@media (min-width : 800px) {
+  .back-button {
+    display: none;
+  }
+}
+
+
 /* ----- */

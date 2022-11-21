@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="instruction">
+    <h1>
+      <%= @instruction.task.name %>
+    </h1>
+    <p>
+      <%= @instruction.body %>
+    </p>
+    <%= button_to "back", 'javascript:history.back()', method: :get, class:"back-button" %>
+  </div>
+</div>
