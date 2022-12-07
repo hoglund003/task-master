@@ -7,10 +7,10 @@
   <% end %>
   <div class="container" data-controller="modal input">
     <%= render "week", selected_date: selected_date %>
-    <%= form_with url: "/task_records", method: :post, id: "new-form" do |f| %>
-      <%= f.hidden_field :selected_date, value: selected_date %>
-      <%= f.hidden_field :task, data: { input_target: "output" } %>
-      <%= render partial: "users_modal", locals: {:users => @users} %>
+    <%= form_with model: TaskRecord.new, method: :post, id: "new-form" do |f| %>
+      <%= f.hidden_field :done_at, value: selected_date %>
+      <%= f.hidden_field :task_id, data: { input_target: "output" } %>
+      <%= render partial: "users_modal", locals: {:users => users} %>
       <div class="task-list">
         <% tasks.each do |task| %>
           <%= render partial: "task_button", :locals => { :task => task, :selected_date => selected_date } %>

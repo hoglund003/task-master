@@ -2,7 +2,7 @@
   <div class="content">
     <button class="user-button cancel" type="button" data-action="modal#deselect">Cancel</button>
     <% users.each do |user| %>
-      <button class="user-button" type="submit" data-modal-target="user" name="user" value="<%= user.id %>">
+      <button class="user-button" type="submit" data-modal-target="user" name="task_record[user_id]" value="<%= user.id %>">
       <div class="small-avatar">
         <%= render partial: "users/avatar", locals: {user: user} %>
       </div>
