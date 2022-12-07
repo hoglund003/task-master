@@ -22,25 +22,15 @@ class TaskRecordsController < ApplicationController
   def create
     @task_record = TaskRecord.new(task_record_params)
 
-    # toggle task
-    similar_record = TaskRecord.where(
-      user_id: @task_record.user_id, 
-      task_id: @task_record.task_id,
-      created_at: (Time.now - 2.minutes)..(Time.now)
-    ).first
-
     unless similar_record.nil?
+      # toggle task
       similar_record.destroy
-      @users = User.all
-      @tasks = Task.all
       flash.now[:alert] = "The task was removed!"
-      render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:task_record][:done_at], }
+      render_board
     else
       if @task_record.save
-        @users = User.all
-        @tasks = Task.all
         flash.now[:notice] = "The task was saved!"
-        render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:task_record][:done_at], }
+        render_board
       else
         flash[:alert] = "The task was not saved!"
         redirect_to root_path
@@ -72,5 +62,23 @@ class TaskRecordsController < ApplicationController
 
   def task_record_params
     params.require(:task_record).permit(:user_id, :task_id, :done_at)
+  end
+
+  def similar_record
+    TaskRecord.where(
+      user_id: @task_record.user_id, 
+      task_id: @task_record.task_id,
+      created_at: (Time.now - 2.minutes)..(Time.now)
+    ).first
+  end
+
+  def render_board
+    @users = User.all
+    @tasks = Task.all
+    if turbo_frame_request?
+      render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:task_record][:done_at]}
+      return
+    end
+    render :new
   end
 end
