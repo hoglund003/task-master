@@ -20,13 +20,13 @@ class TaskRecordsController < ApplicationController
   end
 
   def create
-    @task_record = TaskRecord.new(user_id: params[:user], task_id: params[:task], done_at: params[:selected_date])
+    @task_record = TaskRecord.new(task_record_params)
     
     if @task_record.save
       @users = User.all
       @tasks = Task.all
       flash.now[:notice] = "The task was saved!"
-      render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:selected_date], }
+      render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:task_record][:done_at], }
     else
       flash[:alert] = "The task was not saved!"
       redirect_to root_path
@@ -51,5 +51,11 @@ class TaskRecordsController < ApplicationController
 
   def update
     Change.create(task_record_id: @task_record.id, action: "edit")
+  end
+
+  private 
+
+  def task_record_params
+    params.require(:task_record).permit(:user_id, :task_id, :done_at)
   end
 end
