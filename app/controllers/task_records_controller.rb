@@ -21,15 +21,30 @@ class TaskRecordsController < ApplicationController
 
   def create
     @task_record = TaskRecord.new(task_record_params)
-    
-    if @task_record.save
+
+    # toggle task
+    similar_record = TaskRecord.where(
+      user_id: @task_record.user_id, 
+      task_id: @task_record.task_id,
+      created_at: (Time.now - 2.minutes)..(Time.now)
+    ).first
+
+    unless similar_record.nil?
+      similar_record.destroy
       @users = User.all
       @tasks = Task.all
-      flash.now[:notice] = "The task was saved!"
+      flash.now[:alert] = "The task was removed!"
       render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:task_record][:done_at], }
     else
-      flash[:alert] = "The task was not saved!"
-      redirect_to root_path
+      if @task_record.save
+        @users = User.all
+        @tasks = Task.all
+        flash.now[:notice] = "The task was saved!"
+        render partial: "board", :locals => { tasks: @tasks, users: @users, selected_date: params[:task_record][:done_at], }
+      else
+        flash[:alert] = "The task was not saved!"
+        redirect_to root_path
+      end
     end
   end
 
