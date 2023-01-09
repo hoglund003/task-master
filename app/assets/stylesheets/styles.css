@@ -58,7 +58,6 @@ nav.navbar {
   background-color: var(--red);
   color: white;
   padding: 1rem;
-  margin-bottom: 0.4rem;
   font-size: 1.4rem;
   font-weight: 600;
 }
@@ -710,21 +709,26 @@ td button:hover {
 
 .badge-container {
   display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  /* position: sticky; */
+  /* display: ; */
+  /* position: absolute; */
+  /* z-index: 1; */
+  /* top: 100vh; */
+  /* left: 0; */
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .badge {
   background-color: white;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
-
   padding: 1rem 1.4rem;
-  width: 100%;
-  height: fit-content;
-  max-width: 50vw;
+  /* min-height: fit-content; */
+  height: 100%;
+  max-width: 100vw;
   align-self: center;
+
+  flex-grow: 1;
 
   display: grid;
   grid: 1fr 3fr / 1fr;
